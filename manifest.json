@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Roblox Gamepass Creator",
+  "version": "3.0.0",
+  "description": "Advanced multi-game gamepass creation and management tool for Roblox experiences. Create, edit, and bulk manage gamepasses across multiple games with ease.",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.roblox.com/*",
+    "https://apis.roblox.com/*",
+    "https://games.roblox.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.roblox.com/*"
+      ],
+      "js": [
+        "src/modules/GamepassDashboard.js",
+        "src/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "Roblox Gamepass Creator - Manage Passes"
+  }
+}
